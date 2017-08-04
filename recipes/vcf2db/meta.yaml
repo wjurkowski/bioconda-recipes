@@ -18,6 +18,7 @@ requirements:
     - nomkl # [unix]
     - snappy
     - python-snappy
+    - cffi
     - sqlalchemy
     - cyvcf2
     - numpy
@@ -28,6 +29,7 @@ requirements:
     - nomkl # [unix]
     - snappy
     - python-snappy
+    - cffi
     - sqlalchemy
     - cyvcf2
     - numpy

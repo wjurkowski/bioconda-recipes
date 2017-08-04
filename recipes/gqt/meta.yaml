@@ -1,0 +1,36 @@
+{% set name = "gqt" %}
+{% set version = "1.1.2" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/ryanlayer/gqt/archive/7f64e8b.tar.gz
+  fn: 7f64e8b.tar.gz
+  sha256: 211dbac4de074532ee6908e69dea11b10816e4d8b8a013845bdf43ad9b75036c
+
+build:
+  number: 0
+  skip: True  # [osx]
+
+requirements:
+  build:
+    - gcc  # [not osx]
+    - llvm  # [osx]
+    - flex
+    - sqlite
+    - htslib
+
+  run:
+    - libgcc  # [not osx]
+    - htslib
+
+test:
+  commands:
+    - gqt
+
+about:
+  home: https://github.com/ryanlayer/gqt
+  license: MIT
+  summary: 'GQT is a genotype query interface.'
